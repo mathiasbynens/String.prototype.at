@@ -1,6 +1,6 @@
 # ES6 `String.prototype.at` polyfill [![Build status](https://travis-ci.org/mathiasbynens/String.prototype.at.png?branch=master)](https://travis-ci.org/mathiasbynens/String.prototype.at)
 
-A robust & optimized ES3-compatible polyfill for [the `String.prototype.at` proposal for ECMAScript 6](https://mail.mozilla.org/pipermail/es-discuss/2013-October/034230.html).
+A robust & optimized ES3-compatible polyfill for [the `String.prototype.at` proposal for ECMAScript 6](http://esdiscuss.org/topic/string-prototype-symbolat-improved-string-prototype-charat).
 
 ## Installation
 
