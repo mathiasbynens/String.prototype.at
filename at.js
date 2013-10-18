@@ -1,4 +1,4 @@
-/*! http://git.io/stringat v0.1.0 by @mathias */
+/*! http://mths.be/at v0.1.0 by @mathias */
 if (!String.prototype.at) {
 	String.prototype.at = function(position) {
 		var string = String(this);
