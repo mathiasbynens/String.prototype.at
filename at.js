@@ -16,13 +16,14 @@ if (!String.prototype.at) {
 		var first = string.charAt(index);
 		var cuFirst = string.charCodeAt(index);
 		var cuSecond;
+		var nextIndex = index + 1;
 		if ( // check if it’s the start of a surrogate pair
 			cuFirst >= 0xD800 && cuFirst <= 0xDBFF && // high surrogate
-			size > index + 1 // there is a next code unit
+			size > nextIndex // there is a next code unit
 		) {
-			cuSecond = string.charCodeAt(index + 1);
+			cuSecond = string.charCodeAt(nextIndex);
 			if (cuSecond >= 0xDC00 && cuSecond <= 0xDFFF) { // low surrogate
-				return first + string.charAt(index + 1);
+				return first + string.charAt(nextIndex);
 			}
 		}
 		return first;
