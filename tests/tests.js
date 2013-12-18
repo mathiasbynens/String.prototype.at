@@ -1,5 +1,6 @@
 var assert = require('assert');
 var assertEquals = assert.equal;
+var assertThrows = assert['throws'];
 
 require('../at.js');
 
@@ -118,6 +119,22 @@ assertEquals(String.prototype.at.call('\uD834abc', '1'), 'a');
 
 
 // Lone low surrogates
+assertEquals('\uDF06abc'.at(-Infinity), '');
+assertEquals('\uDF06abc'.at(-1), '');
+assertEquals('\uDF06abc'.at(-0), '\uDF06');
+assertEquals('\uDF06abc'.at(+0), '\uDF06');
+assertEquals('\uDF06abc'.at(1), 'a');
+assertEquals('\uDF06abc'.at(42), '');
+assertEquals('\uDF06abc'.at(+Infinity), '');
+assertEquals('\uDF06abc'.at(null), '\uDF06');
+assertEquals('\uDF06abc'.at(undefined), '\uDF06');
+assertEquals('\uDF06abc'.at(), '\uDF06');
+assertEquals('\uDF06abc'.at(false), '\uDF06');
+assertEquals('\uDF06abc'.at(NaN), '\uDF06');
+assertEquals('\uDF06abc'.at(''), '\uDF06');
+assertEquals('\uDF06abc'.at('_'), '\uDF06');
+assertEquals('\uDF06abc'.at('1'), 'a');
+
 assertEquals(String.prototype.at.call('\uDF06abc', -Infinity), '');
 assertEquals(String.prototype.at.call('\uDF06abc', -1), '');
 assertEquals(String.prototype.at.call('\uDF06abc', -0), '\uDF06');
@@ -133,3 +150,20 @@ assertEquals(String.prototype.at.call('\uDF06abc', NaN), '\uDF06');
 assertEquals(String.prototype.at.call('\uDF06abc', ''), '\uDF06');
 assertEquals(String.prototype.at.call('\uDF06abc', '_'), '\uDF06');
 assertEquals(String.prototype.at.call('\uDF06abc', '1'), 'a');
+
+// Calling on `undefined`/`null`
+assertThrows(function() { String.prototype.at.call(undefined); }, TypeError);
+assertThrows(function() { String.prototype.at.call(undefined, 4); }, TypeError);
+assertThrows(function() { String.prototype.at.call(null); }, TypeError);
+assertThrows(function() { String.prototype.at.call(null, 4); }, TypeError);
+assertEquals(String.prototype.at.call(42, 0), '4');
+assertEquals(String.prototype.at.call(42, 1), '2');
+assertEquals(String.prototype.at.call({ 'toString': function() { return 'abc'; } }, 2), 'c');
+
+assertThrows(function() { String.prototype.at.apply(undefined); }, TypeError);
+assertThrows(function() { String.prototype.at.apply(undefined, [4]); }, TypeError);
+assertThrows(function() { String.prototype.at.apply(null); }, TypeError);
+assertThrows(function() { String.prototype.at.apply(null, [4]); }, TypeError);
+assertEquals(String.prototype.at.apply(42, [0]), '4');
+assertEquals(String.prototype.at.apply(42, [1]), '2');
+assertEquals(String.prototype.at.apply({ 'toString': function() { return 'abc'; } }, [2]), 'c');

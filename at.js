@@ -1,6 +1,10 @@
 /*! http://mths.be/at v0.1.0 by @mathias */
 if (!String.prototype.at) {
 	String.prototype.at = function(position) {
+		'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
+		if (this == null) {
+			throw TypeError();
+		}
 		var string = String(this);
 		var size = string.length;
 		// `ToInteger`
