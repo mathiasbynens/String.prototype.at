@@ -2,6 +2,8 @@
 
 A robust & optimized ES3-compatible polyfill for [the `String.prototype.at` proposal for ECMAScript 6](http://esdiscuss.org/topic/string-prototype-symbolat-improved-string-prototype-charat).
 
+Spec bug ticket: <https://bugs.ecmascript.org/show_bug.cgi?id=2073>
+
 ## Spec proposal for `String.prototype.at(pos)`
 
 **NOTE:** Returns a single-element String containing the code point at element position `pos` in the String `value` resulting from converting the `this` object to a String. If there is no element at that position, the result is the empty String. The result is a String value, not a String object.
