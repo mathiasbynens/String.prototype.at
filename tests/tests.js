@@ -5,6 +5,7 @@ var assertThrows = assert['throws'];
 require('../at.js');
 
 assertEquals(String.prototype.at.length, 1);
+assertEquals(String.prototype.propertyIsEnumerable('at'), false);
 
 // String that starts with a BMP symbol
 assertEquals('abc\uD834\uDF06def'.at(-Infinity), '');
