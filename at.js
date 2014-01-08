@@ -2,6 +2,15 @@
 if (!String.prototype.at) {
 	(function() {
 		'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
+		var defineProperty = (function() {
+			// IE 8 only supports `Object.defineProperty` on DOM elements
+			try {
+				var object = {};
+				var $defineProperty = Object.defineProperty;
+				var result = $defineProperty(object, object, object) && $defineProperty;
+			} catch(error) {}
+			return result;
+		}());
 		var at = function(position) {
 			if (this == null) {
 				throw TypeError();
@@ -33,8 +42,8 @@ if (!String.prototype.at) {
 			}
 			return first;
 		};
-		if (Object.defineProperty) {
-			Object.defineProperty(String.prototype, 'at', {
+		if (defineProperty) {
+			defineProperty(String.prototype, 'at', {
 				'value': at,
 				'configurable': true,
 				'writable': true
