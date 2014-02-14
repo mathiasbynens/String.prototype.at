@@ -26,6 +26,12 @@ assertEquals('abc\uD834\uDF06def'.at(NaN), 'a');
 assertEquals('abc\uD834\uDF06def'.at(''), 'a');
 assertEquals('abc\uD834\uDF06def'.at('_'), 'a');
 assertEquals('abc\uD834\uDF06def'.at('1'), 'b');
+assertEquals('abc\uD834\uDF06def'.at([]), 'a');
+assertEquals('abc\uD834\uDF06def'.at({}), 'a');
+assertEquals('abc\uD834\uDF06def'.at(-0.9), 'a');
+assertEquals('abc\uD834\uDF06def'.at(1.9), 'b');
+assertEquals('abc\uD834\uDF06def'.at(7.9), 'f');
+assertEquals('abc\uD834\uDF06def'.at(Math.pow(2,32)), '');
 
 assertEquals(String.prototype.at.call('abc\uD834\uDF06def', -Infinity), '');
 assertEquals(String.prototype.at.call('abc\uD834\uDF06def', -1), '');
@@ -45,6 +51,12 @@ assertEquals(String.prototype.at.call('abc\uD834\uDF06def', NaN), 'a');
 assertEquals(String.prototype.at.call('abc\uD834\uDF06def', ''), 'a');
 assertEquals(String.prototype.at.call('abc\uD834\uDF06def', '_'), 'a');
 assertEquals(String.prototype.at.call('abc\uD834\uDF06def', '1'), 'b');
+assertEquals(String.prototype.at.call('abc\uD834\uDF06def', []), 'a');
+assertEquals(String.prototype.at.call('abc\uD834\uDF06def', {}), 'a');
+assertEquals(String.prototype.at.call('abc\uD834\uDF06def', -0.9), 'a');
+assertEquals(String.prototype.at.call('abc\uD834\uDF06def', 1.9), 'b');
+assertEquals(String.prototype.at.call('abc\uD834\uDF06def', 7.9), 'f');
+assertEquals(String.prototype.at.call('abc\uD834\uDF06def', Math.pow(2,32)), '');
 
 // String that starts with an astral symbol
 assertEquals('\uD834\uDF06def'.at(-Infinity), '');
