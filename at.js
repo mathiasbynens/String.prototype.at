@@ -24,7 +24,7 @@ if (!String.prototype.at) {
 			}
 			// Account for out-of-bounds indices
 			// The odd lower bound is because the ToInteger operation is
-			// going to round n to 0 for -1 < n <= 0.
+			// going to round `n` to `0` for `-1 < n <= 0`.
 			if (index <= -1 || index >= size) {
 				return '';
 			}
@@ -44,7 +44,7 @@ if (!String.prototype.at) {
 					len = 2;
 				}
 			}
-			return string.substr(index, len);
+			return string.slice(index, index + len);
 		};
 		if (defineProperty) {
 			defineProperty(String.prototype, 'at', {
