@@ -1,6 +1,6 @@
-# ES6 `String.prototype.at` polyfill [![Build status](https://travis-ci.org/mathiasbynens/String.prototype.at.png?branch=master)](https://travis-ci.org/mathiasbynens/String.prototype.at)
+# ES6/ES7 `String.prototype.at` polyfill [![Build status](https://travis-ci.org/mathiasbynens/String.prototype.at.svg?branch=master)](https://travis-ci.org/mathiasbynens/String.prototype.at)
 
-A robust & optimized ES3-compatible polyfill for [the `String.prototype.at` proposal for ECMAScript 6](http://esdiscuss.org/topic/string-prototype-symbolat-improved-string-prototype-charat).
+A robust & optimized ES3-compatible polyfill for [the `String.prototype.at` proposal for ECMAScript 6/7](http://esdiscuss.org/topic/string-prototype-symbolat-improved-string-prototype-charat).
 
 Spec bug ticket: <https://bugs.ecmascript.org/show_bug.cgi?id=2073>
 
@@ -58,7 +58,7 @@ Polyfills and test suites for [`String.fromCodePoint`](http://mths.be/fromcodepo
 
 ## Author
 
-| [![twitter/mathias](http://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](http://twitter.com/mathias "Follow @mathias on Twitter") |
+| [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |
 |---|
 | [Mathias Bynens](http://mathiasbynens.be/) |
 
