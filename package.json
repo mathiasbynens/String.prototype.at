@@ -1,6 +1,6 @@
 {
 	"name": "string.prototype.at",
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"description": "A robust & optimized `String.prototype.at` prollyfill, based on the proposal for ECMAScript 6/7.",
 	"homepage": "http://mths.be/at",
 	"main": "at.js",
