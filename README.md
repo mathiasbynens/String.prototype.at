@@ -10,7 +10,7 @@ Spec bug ticket: <https://bugs.ecmascript.org/show_bug.cgi?id=2073>
 
 When the `at` method is called with one argument `pos`, the following steps are taken:
 
-01. Let `O` be `CheckObjectCoercible(this value)`.
+01. Let `O` be `RequireObjectCoercible(this value)`.
 02. Let `S` be `ToString(O)`.
 03. `ReturnIfAbrupt(S)`.
 04. Let `position` be `ToInteger(pos)`.

@@ -3,12 +3,12 @@ if (!String.prototype.at) {
 	(function() {
 		'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
 		var defineProperty = (function() {
-			// IE 8 only supports `Object.defineProperty` on DOM elements
+			// IE 8 only supports `Object.defineProperty` on DOM elements.
 			try {
 				var object = {};
 				var $defineProperty = Object.defineProperty;
 				var result = $defineProperty(object, object, object) && $defineProperty;
-			} catch(error) {}
+			} catch (exception) {}
 			return result;
 		}());
 		var at = function(position) {
@@ -35,7 +35,7 @@ if (!String.prototype.at) {
 			var cuSecond;
 			var nextIndex = index + 1;
 			var len = 1;
-			if ( // check if it’s the start of a surrogate pair
+			if ( // Check if it’s the start of a surrogate pair.
 				cuFirst >= 0xD800 && cuFirst <= 0xDBFF && // high surrogate
 				size > nextIndex // there is a next code unit
 			) {
