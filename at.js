@@ -1,4 +1,4 @@
-/*! http://mths.be/at v0.2.0 by @mathias */
+/*! https://mths.be/at v0.2.0 by @mathias */
 if (!String.prototype.at) {
 	(function() {
 		'use strict'; // needed to support `apply`/`call` with `undefined`/`null`
