@@ -1,3 +1,5 @@
+**Note:** This proposal was not upstreamed into the ECMAScript specification! This repository is kept for historical purposes. Years later, in November 2020, [a distinct proposal](https://github.com/tc39/proposal-item-method) adds `String.prototype.at` with different semantics.
+
 # ES6/ES7 `String.prototype.at` polyfill [![Build status](https://travis-ci.org/mathiasbynens/String.prototype.at.svg?branch=master)](https://travis-ci.org/mathiasbynens/String.prototype.at)
 
 A robust & optimized ES3-compatible polyfill for [the `String.prototype.at` proposal for ECMAScript 6/7](http://esdiscuss.org/topic/string-prototype-symbolat-improved-string-prototype-charat).
